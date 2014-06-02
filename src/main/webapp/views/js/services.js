@@ -1,11 +1,7 @@
-var demoApp=angular.module("demoApp",[]);
-
 var RoomService = function(){
-	var names=['pratik','adhau'];
 	this.getNames = function(){
-		return names;
+		return ['pratik','adhau'];
 	};
 	return this;
 };
-
 demoApp.service("RoomService", RoomService);
