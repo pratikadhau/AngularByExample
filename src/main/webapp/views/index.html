@@ -10,14 +10,18 @@
 <body >
 	<div>
 		<form ng-controller="RoomController">
-			Search:<input type="text" name="filter" ng-model="searchname">
+			Search:<input type="text" name="filter" ng-model="searchname.$">
+			Search by firstname:<input type="text" name="filter" ng-model="searchname.firstname">
+			Search by lastname:<input type="text" name="filter" ng-model="searchname.lastname">
+			Search by city:<input type="text" name="filter" ng-model="searchname.city">
+			<table>
+				<tr><th>first-name</th><th>last-name</th><th>city</th><th>current-address</th></tr>
+			<tr  ng-repeat="roomie in room.roomie|filter:searchname|orderBy:'toString'"> 
+				<td>{{roomie.firstname}}</td><td>{{roomie.lastname}}</td><td>{{roomie.city}}</td><td>{{room.address}}</td>
+			</tr>
+			</table>
 			<br/>
-			<div ng-repeat="name in names|filter:searchname|orderBy:'toString'">
-				<ul>
-					<li"><hello ng-attr-name="{{name}}" ></hello> </li>
-				</ul>
-			</div>
-			
+				<hello ng-attr-name="{{searchname}}"></hello>			
 		</form>
 	</div>
 </body>

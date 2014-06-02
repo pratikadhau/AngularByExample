@@ -3,7 +3,7 @@ var demoApp= angular.module("demoApp",[]);
 
 
 var RoomController = function($scope , RoomService) {
-	$scope.names=RoomService.getNames();
+	$scope.room=RoomService.getRoom();
 };
 
 demoApp.controller('RoomController',RoomController);
