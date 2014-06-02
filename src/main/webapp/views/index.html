@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="demoApp">
+<html data-ng-app="demoApp">
 <head>
 <title>Angular JS</title>
 <script src="js/angular.min.js"></script>
@@ -9,14 +9,14 @@
 </head>
 <body >
 	<div>
-		<form ng-controller="RoomController">
-			Search:<input type="text" name="filter" ng-model="searchname.$">
-			Search by firstname:<input type="text" name="filter" ng-model="searchname.firstname">
-			Search by lastname:<input type="text" name="filter" ng-model="searchname.lastname">
-			Search by city:<input type="text" name="filter" ng-model="searchname.city">
+		<form data-ng-controller="RoomController">
+			Search:<input type="text" name="filter" data-ng-model="searchname.$">
+			Search by firstname:<input type="text" name="filter" data-ng-model="searchname.firstname">
+			Search by lastname:<input type="text" name="filter" data-ng-model="searchname.lastname">
+			Search by city:<input type="text" name="filter" data-ng-model="searchname.city">
 			<table>
 				<tr><th>first-name</th><th>last-name</th><th>city</th><th>current-address</th></tr>
-			<tr  ng-repeat="roomie in room.roomie|filter:searchname|orderBy:'toString'"> 
+			<tr  data-ng-repeat="roomie in room.roomie|filter:searchname|orderBy:'toString'"> 
 				<td>{{roomie.firstname}}</td><td>{{roomie.lastname}}</td><td>{{roomie.city}}</td><td>{{room.address}}</td>
 			</tr>
 			</table>
